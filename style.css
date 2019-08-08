@@ -1,0 +1,148 @@
+.bttn {
+    position: relative;
+    background-color:forestgreen;
+    width: 50px;
+    height: 50px;
+    align-self:center;
+}
+
+.bttn:active {
+    background-color: darkseagreen;
+}
+.camfbttn:enabled {
+    
+}
+
+.cambttn {
+    left : 35%;
+    position: relative;
+    background-color:red;
+    width: 400px;
+    height: 50px;
+    color:white;
+    align-self:center;
+}
+
+.cambttn:active {
+    background-color:indianred;
+}
+
+.timer {
+    color:white;
+    align-content: center;
+}
+.jump {
+    align-self:center;
+    position: relative;
+    left:27%;
+}
+.camfbttn{
+    left:30%;
+    position: relative;
+    background-color:black;
+    border-bottom-color: white;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: white;
+    width: 100px;
+    height: 50px;
+    color:whitesmoke;
+    align-self:center;
+}
+
+.camfbttn:hover{
+    background-color:darkolivegreen;
+}
+.camfbttn:active{
+    background-color:white;
+}
+
+.cam {
+    border-bottom-color: black;
+    position: relative;
+    top: 15%;
+    width:85%;
+    height:85%;
+}
+
+.win{
+    margin: 0;
+    position:absolute;
+    color:white;
+    font-size: 500%;
+    font-family: monospace;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+header {
+    text-align: center;
+    color : white;
+    font-family: monospace;
+    font-size : 400%;
+}
+
+
+.menu {
+    width: 85%;
+}
+.gf {
+    width: 2%;
+}
+
+.play  {
+    font-size: 200%;
+    color : white;
+    background-color: black;
+    border-bottom-color: black;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    font-family: monospace;
+    margin: 0;
+    position:absolute;
+    top: 40%;
+    left: 60%;
+    margin-right: -20%;
+    transform: translate(-100%, -50%);
+}
+
+.play2  {
+    font-size: 200%;
+    color : white;
+    background-color: black;
+    border-bottom-color: black;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    font-family: monospace;
+    margin: 0;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.play2:hover {
+    text-transform: none;
+    font-size: 200%;
+    color : red;
+    background-color: black;
+    border-bottom-color: red;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+}
+
+.play:hover {
+    font-size: 200%;
+    color : red;
+    background-color: black;
+    border-bottom-color: red;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+}
