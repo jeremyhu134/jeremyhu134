@@ -405,9 +405,6 @@ function powercheck(){
 }
 
 $(document).ready(function(){ 
-    if(localStorage.getItem("night") !== 2){
-        window.location.href="index.html";
-    }
     ambiance.play();
     phone2.play();
     document.getElementById("timei").innerHTML = "PM : "+ hour;

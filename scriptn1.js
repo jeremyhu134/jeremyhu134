@@ -351,10 +351,7 @@ function powercheck(){
     }
 }
 
-$(document).ready(function(){ 
-    if(localStorage.getItem("night") !== 1){
-        window.location.href="index.html";
-    }
+$(document).ready(function(){
     ambiance.play();
     phone.play();
     document.getElementById("timei").innerHTML = "PM : "+ hour;

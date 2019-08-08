@@ -11,7 +11,7 @@ $(document).ready(function(){
     document.getElementById("play2").textContent = 'Continue : Night'+night;
     $("#play").click(function(){
         night = 1;
-        localStorage.setItem("night", night);
+        localStorage.setItem("night", 1);
         window.location.href="nightscreen.html";
     });
     $("#play2").click(function(){
