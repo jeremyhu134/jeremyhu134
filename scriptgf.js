@@ -25,7 +25,7 @@ var gflaugh = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-piz
 var surprise = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/d/d6/Windowscare.ogg/revision/latest?cb=20140914065642");
 var running = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/0/06/Run.ogg/revision/latest?cb=20140914064651");
 var banging = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/9/95/Knock2.ogg/revision/latest?cb=20140914063210"); 
-var scream = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/a/a7/XSCREAM.ogg/revision/latest?cb=20140826011759"); 
+var scream = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/5/56/XSCREAM2.ogg/revision/latest?cb=20140826011809"); 
 
 function check(){
         if(goldenfreddy === 5 ){
@@ -156,7 +156,10 @@ function movement(){
                goldenfreddy = 0;
            }
            if (goldenfreddy === 0 && leftdoor === 0){
-               window.location.href="lose.html";
+               document.getElementById("jumpscare").src = "https://piskel-imgstore-b.appspot.com/img/ed0434d7-bbaf-11e9-8c07-2133efa94c0d.gif";
+                window.location.href="#top";
+                scream.play();
+                setTimeout(function(){ window.location.href="lose.html"; }, 3000);
            }
            else if(goldenfreddy === 0){
                gflaugh.play();
@@ -178,7 +181,10 @@ function movement(){
                goldenfreddy = 9;
            }
            if (goldenfreddy === 9 && rightdoor === 0){
-               window.location.href="lose.html";
+               document.getElementById("jumpscare").src = "https://piskel-imgstore-b.appspot.com/img/ed0434d7-bbaf-11e9-8c07-2133efa94c0d.gif";
+                window.location.href="#top";
+                scream.play();
+                setTimeout(function(){ window.location.href="lose.html"; }, 3000);
            }
            else if(goldenfreddy === 9){
                gflaugh.play();
@@ -260,17 +266,16 @@ $(document).ready(function(){
         if(leftdoor === 0 && power > 0){
             door.currentTime = 0;
             door.play();
-            power= power - 1;
-            usage = usage + 3;
+            powertick = powertick - 2500;
             leftdoor = 1;
-            usage = usage + 1;
+            usage = usage + 2;
             afktimer = 3000;
         }
         else if(leftdoor === 1){
             door.currentTime = 0;
             door.play();
             leftdoor = 0;
-            usage = usage - 3;
+            usage = usage - 2;
             afktimer = 3000;
         }
     }); 
@@ -278,16 +283,16 @@ $(document).ready(function(){
         if(rightdoor === 0 && power > 0){
             door.currentTime = 0;
             door.play();
-            power = power - 1;
+            powertick = powertick - 2500;
             rightdoor = 1;
-            usage = usage + 3;
+            usage = usage + 2;
             afktimer = 3000;
         }
         else if(rightdoor === 1){
             door.currentTime = 0;
             door.play();
             rightdoor = 0;
-            usage = usage - 3;
+            usage = usage - 2;
             afktimer = 3000;
         }
     }); 

@@ -229,15 +229,15 @@ function movement(){
         if(bmovetime <= 0){
            if(bonnie === 5){
                bonnie = 3;
-               bmovetime = Math.floor((Math.random() * 500) + 1000);
+               bmovetime = Math.floor((Math.random() * 1000) + 500);
            }
            else if(bonnie === 3){
                bonnie = 2;
-               bmovetime = Math.floor((Math.random() * 500) + 1000);
+               bmovetime = Math.floor((Math.random() * 1000) + 500);
            }
            else if(bonnie === 2){
                bonnie = 1;
-               bmovetime = Math.floor((Math.random() * 500) + 1000);
+               bmovetime = Math.floor((Math.random() * 1000) + 500);
            }
            else if(bonnie === 1){
                stomp.play();
