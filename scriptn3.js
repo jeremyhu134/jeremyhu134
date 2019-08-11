@@ -348,27 +348,27 @@ function timecheck(){
         time = time + 1;
         if(time === 6000){
             hour = 1;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 12000){
             hour = 2;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 18000){
             hour = 3;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 24000){
             hour = 4;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 30000){
             hour = 5;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 36000){
             hour = 6;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
             night = 4;
             localStorage.setItem("night", night);
             window.location.href="win.html";
@@ -408,7 +408,7 @@ function powercheck(){
 $(document).ready(function(){ 
     ambiance.play();
     phone2.play();
-    document.getElementById("timei").innerHTML = "PM : "+ hour;
+    document.getElementById("timei").innerHTML = hour+"AM";
     document.getElementById("poweri").innerHTML = "POWER : "+ power +'%';
     setInterval(timecheck,10);
     setInterval(check,1);

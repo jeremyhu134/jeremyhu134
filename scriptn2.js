@@ -20,7 +20,7 @@ var time = 0;
 var powertick = 10000;
 var usage = 8;
 var afktimer = 3000;
-var ambiance = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/c/cb/EerieAmbienceLargeSca_MV005.ogg/revision/latest?cb=20140914062801");
+var ambiance = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/1/1f/ColdPresc_B.ogg/revision/latest?cb=20140914061939");
 var stomp = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/9/9f/Running_fast3.ogg/revision/latest?cb=20140914064730");
 var stomp2 = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/3/3c/Deep_steps.ogg/revision/latest?cb=20140914062533");
 var camflip = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/f/f0/Blip3.ogg/revision/latest?cb=20140914223121");
@@ -347,27 +347,27 @@ function timecheck(){
         time = time + 1;
         if(time === 6000){
             hour = 1;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 12000){
             hour = 2;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 18000){
             hour = 3;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 24000){
             hour = 4;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 30000){
             hour = 5;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
         }
         if(time === 36000){
             hour = 6;
-            document.getElementById("timei").innerHTML = "PM : "+ hour;
+            document.getElementById("timei").innerHTML = hour+"AM";
             night = 3;
             localStorage.setItem("night", night);
             window.location.href="win.html";
@@ -407,7 +407,7 @@ function powercheck(){
 $(document).ready(function(){ 
     ambiance.play();
     phone2.play();
-    document.getElementById("timei").innerHTML = "PM : "+ hour;
+    document.getElementById("timei").innerHTML = hour+"AM";
     document.getElementById("poweri").innerHTML = "POWER : "+ power +'%';
     setInterval(timecheck,10);
     setInterval(check,1);
