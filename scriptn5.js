@@ -372,8 +372,7 @@ function timecheck(){
         if(time === 36000){
             hour = 6;
             document.getElementById("timei").innerHTML = hour+"AM";
-            night = 6;
-            localStorage.setItem("night", night);
+            localStorage.Night = 6;
             window.location.href="win.html";
         }
     }

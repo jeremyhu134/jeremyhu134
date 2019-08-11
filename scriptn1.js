@@ -234,7 +234,7 @@ function movement(){
                bmovetime = Math.floor((Math.random() * 3500) + 3500);
            }
         }
-        if(cmovetime <= 0 && hour !== 12){
+        if(cmovetime <= 0 && hour !== 12 && hour>= 4){
            if(chica === 5){
                chica = 6;
                cmovetime = Math.floor((Math.random() * 2500) + 3500);
@@ -316,8 +316,7 @@ function timecheck(){
         if(time === 36000){
             hour = 6;
             document.getElementById("timei").innerHTML = hour+"AM";
-            night = 2;
-            localStorage.setItem("night", night);
+            localStorage.Night = 2;
             window.location.href="win.html";
         }
     }

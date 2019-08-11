@@ -1,21 +1,29 @@
 $(document).ready(function(){
-    var night = 1;
-    if(localStorage.getItem("night") >= 2){
-        night = localStorage.getItem("night");
+    var night = localStorage.Night;
+    if(localStorage.Night >= 2){
+        night = localStorage.Night;
     }
     else {
-        night = 1;
-        localStorage.setItem("night", night);
+        localStorage.Night = 1;
     }
-    night = localStorage.getItem("night");
-    document.getElementById("play2").textContent = 'Continue : Night'+night;
+    document.getElementById("play2").innerHTML = 'Continue : Night'+night;
+    if(night >= 6){
+        document.getElementById("play2").innerHTML = "Continue : Night5";
+        document.getElementById("play3").innerHTML = "Night6";
+    }
     $("#play").click(function(){
-        night = 1;
-        localStorage.setItem("night", 1);
+        localStorage.Night = 1;
         window.location.href="nightscreen.html";
     });
     $("#play2").click(function(){
-        localStorage.setItem("night", night);
-        window.location.href="nightscreen.html";
+        if(night >= 6){
+            window.location.href="night5.html";
+        }
+        else {
+            window.location.href="nightscreen.html";
+        }
+    });
+     $("#play3").click(function(){
+            window.location.href="night6.html";
     });
 });
