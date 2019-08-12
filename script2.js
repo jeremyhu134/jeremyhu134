@@ -1,5 +1,7 @@
 $(document).ready(function(){
     var night = localStorage.Night;
+    var Night6 = localStorage.night6;
+    var cNight = localStorage.cnight;
     if(localStorage.Night >= 2){
         night = localStorage.Night;
     }
@@ -7,23 +9,23 @@ $(document).ready(function(){
         localStorage.Night = 1;
     }
     document.getElementById("play2").innerHTML = 'Continue : Night'+night;
-    if(night >= 6){
-        document.getElementById("play2").innerHTML = "Continue : Night5";
+    if(localStorage.night6 >= 1){
         document.getElementById("play3").innerHTML = "Night6";
+    }
+    if(localStorage.cnight >= 1){
+        document.getElementById("play4").innerHTML = "Custom Night";
     }
     $("#play").click(function(){
         localStorage.Night = 1;
         window.location.href="nightscreen.html";
     });
     $("#play2").click(function(){
-        if(night >= 6){
-            window.location.href="night5.html";
-        }
-        else {
             window.location.href="nightscreen.html";
-        }
     });
      $("#play3").click(function(){
             window.location.href="night6.html";
+    });
+    $("#play4").click(function(){
+            window.location.href="select.html";
     });
 });

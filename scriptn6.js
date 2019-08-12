@@ -27,7 +27,6 @@ var camflip = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-piz
 var flaugh = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/b/ba/Laugh_Giggle_Girl_1d.ogg/revision/latest?cb=20140914224119");
 var door = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/e/e1/SFXBible_12478.ogg/revision/latest?cb=20140912033845");
 var light = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/8/8d/BallastHumMedium2.ogg/revision/latest?cb=20140916035255");
-var phone3 = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/2/2d/Voiceover5.ogg/revision/latest?cb=20140825000827");
 var surprise = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/d/d6/Windowscare.ogg/revision/latest?cb=20140914065642");
 var running = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/0/06/Run.ogg/revision/latest?cb=20140914064651");
 var banging = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/9/95/Knock2.ogg/revision/latest?cb=20140914063210"); 
@@ -232,15 +231,15 @@ function movement(){
         if(bmovetime <= 0){
            if(bonnie === 5){
                bonnie = Math.floor((Math.random() * 3) + 2);
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bmovetime = Math.floor((Math.random() * 500) + 300);
            }
            else if(bonnie === 3){
                bonnie = 2;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bmovetime = Math.floor((Math.random() * 500) + 300);
            }
            else if(bonnie === 2){
                bonnie = 1;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bmovetime = Math.floor((Math.random() * 500) + 300);
            }
            else if(bonnie === 1){
                stomp.play();
@@ -248,7 +247,7 @@ function movement(){
                light.currentTime = 0;
                light.pause();
                bonnie = 0;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bmovetime = Math.floor((Math.random() * 800) + 300);
            }
            else if (bonnie === 0 && leftdoor === 0){
                death();
@@ -263,15 +262,15 @@ function movement(){
         if(cmovetime <= 0){
            if(chica === 5){
                chica = Math.floor((Math.random() * 2) + 5);
-               cmovetime = Math.floor((Math.random() * 500) + 800);
+               cmovetime = Math.floor((Math.random() * 500) + 500);
            }
            else if(chica === 6){
                chica = 7;
-               cmovetime = Math.floor((Math.random() * 500) + 800);
+               cmovetime = Math.floor((Math.random() * 500) + 500);
            }
            else if(chica === 7 && freddy !== 8){
                chica = 8;
-               cmovetime = Math.floor((Math.random() * 500) + 800);
+               cmovetime = Math.floor((Math.random() * 500) + 500);
            }
            else if(chica === 8){
                light.currentTime = 0;
@@ -279,7 +278,7 @@ function movement(){
                stomp.play();
                rightlight = 0;
                chica = 0;
-               cmovetime = Math.floor((Math.random() * 800) + 300);
+               cmovetime = Math.floor((Math.random() * 500) + 300);
            }
            else if (chica === 0 && rightdoor === 0){
                death();
@@ -295,17 +294,17 @@ function movement(){
            if(freddy === 5){
                freddy = 6;
                flaugh.play();
-               fmovetime = Math.floor((Math.random() * 500) + 2000);
+               fmovetime = Math.floor((Math.random() * 500) + 1500);
            }
            else if(freddy === 6){
                freddy = 7;
                flaugh.play();
-               fmovetime = Math.floor((Math.random() * 500) + 2000);
+               fmovetime = Math.floor((Math.random() * 500) + 1000);
            }
            else if(freddy === 7 && chica !== 8){
                freddy = 8;
                flaugh.play();
-               fmovetime = Math.floor((Math.random() * 500) + 2000);
+               fmovetime = Math.floor((Math.random() * 500) + 500);
            }
            else if (freddy === 8 && rightdoor === 0){
                death();
@@ -314,21 +313,21 @@ function movement(){
                rightlight = 0;
                flaugh.play();
                freddy = 5;
-               fmovetime = Math.floor((Math.random() * 100) + 2500);
+               fmovetime = Math.floor((Math.random() * 100) + 1500);
            }
         }
         if(fxmovetime <= 0){
            if(foxy === 5 ){
                foxy = 4;
-               fxmovetime = Math.floor((Math.random() * 1000) + 1000);
+               fxmovetime = Math.floor((Math.random() * 1000) + 800);
            }
-           else if(foxy=== 4 && cameraframe !== 4){
+           else if(foxy=== 4){
                foxy = 3;
-               fxmovetime = Math.floor((Math.random() * 1000) + 1000);
+               fxmovetime = Math.floor((Math.random() * 1000) + 800);
            }
            else if(foxy === 3 && bonnie !== 2) {
                foxy = 2;
-               fxmovetime = 600;
+               fxmovetime = 500;
            }
            else if(foxy === 2){
                foxy = 1;
@@ -341,8 +340,8 @@ function movement(){
            }
            else if(foxy === 1){
                banging.play();
-               foxy = 4;
-               fxmovetime = Math.floor((Math.random() * 500) + 2000);
+               foxy = 5;
+               fxmovetime = Math.floor((Math.random() * 500) + 1500);
             }
         }
     }
@@ -372,7 +371,7 @@ function timecheck(){
         if(time === 36000){
             hour = 6;
             document.getElementById("timei").innerHTML = hour+"AM";
-            localstorage.night6 = 1;
+            localStorage.cnight = 1;
             window.location.href="win.html";
         }
     }
@@ -397,7 +396,6 @@ function powercheck(){
         powertick = 10000;
     }
     if(power <= 0){
-        phone3.pause();
         ambiance.pause();
         power = 0;
         leftdoor = 0;
@@ -409,7 +407,6 @@ function powercheck(){
 
 $(document).ready(function(){ 
     ambiance.play();
-    phone3.play();
     document.getElementById("timei").innerHTML = hour+"AM";
     document.getElementById("poweri").innerHTML = "POWER : "+ power +'%';
     setInterval(timecheck,10);

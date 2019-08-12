@@ -11,15 +11,19 @@ var leftdoorc = 0;
 var rightdoorc = 0;
 var time = 0;
 var hour = 12;
-var bmovetime = Math.floor((Math.random() * 500) + 1000);
-var cmovetime = Math.floor((Math.random() * 500) + 1000);
-var fmovetime = Math.floor((Math.random() * 500) + 1000);
-var fxmovetime = Math.floor((Math.random() * 1000) + 4000);
+var bmovetime = 500;
+var cmovetime = 500;
+var fmovetime = 500;
+var fxmovetime = 500;
 var power = 100;
 var time = 0;
 var powertick = 10000;
 var usage = 8;
 var afktimer = 3000;
+var bond = localStorage.bonnied;
+var chid = localStorage.chicad;
+var fred = localStorage.freddyd;
+var foxd = localStorage.foxyd;
 var ambiance = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/c/cb/EerieAmbienceLargeSca_MV005.ogg/revision/latest?cb=20140914062801");
 var stomp = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/9/9f/Running_fast3.ogg/revision/latest?cb=20140914064730");
 var stomp2 = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/3/3c/Deep_steps.ogg/revision/latest?cb=20140914062533");
@@ -27,7 +31,6 @@ var camflip = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-piz
 var flaugh = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/b/ba/Laugh_Giggle_Girl_1d.ogg/revision/latest?cb=20140914224119");
 var door = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/e/e1/SFXBible_12478.ogg/revision/latest?cb=20140912033845");
 var light = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/8/8d/BallastHumMedium2.ogg/revision/latest?cb=20140916035255");
-var phone3 = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/2/2d/Voiceover5.ogg/revision/latest?cb=20140825000827");
 var surprise = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/d/d6/Windowscare.ogg/revision/latest?cb=20140914065642");
 var running = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/0/06/Run.ogg/revision/latest?cb=20140914064651");
 var banging = new Audio("https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/9/95/Knock2.ogg/revision/latest?cb=20140914063210"); 
@@ -221,34 +224,94 @@ function death(){
     }
 }
 
+function bcnm (){
+    if(bond >= 1 && bond <= 5 ){
+            bmovetime = Math.floor((Math.random() * 2500) + 2500);
+    }
+    if(bond >= 6 && bond <= 10 ){
+            bmovetime = Math.floor((Math.random() * 1750) + 1750);
+    }
+    if(bond >= 11 && bond <= 15 ){
+            bmovetime = Math.floor((Math.random() * 1500) + 1000);
+    }
+    if(bond >= 16 && bond <= 20 ){
+            bmovetime = Math.floor((Math.random() * 1000) + 500);
+    }
+}
+function ccnm (){
+    if(chid >= 1 && chid <= 5 ){
+            cmovetime = Math.floor((Math.random() * 2500) + 2500);
+    }
+    if(chid >= 6 && chid <= 10 ){
+            cmovetime = Math.floor((Math.random() * 1750) + 1750);
+    }
+    if(chid >= 11 && chid <= 15 ){
+            cmovetime = Math.floor((Math.random() * 1500) + 1000);
+    }
+    if(chid >= 16 && chid <= 20 ){
+            cmovetime = Math.floor((Math.random() * 1000) + 500);
+    }
+}
+function fcnm (){
+    if(fred >= 1 && fred <= 5 ){
+            fmovetime = Math.floor((Math.random() * 2000) + 3000);
+    }
+    if(fred >= 6 && fred <= 10 ){
+            fmovetime = Math.floor((Math.random() * 2000) + 1500);
+    }
+    if(fred >= 11 && fred <= 15 ){
+            fmovetime = Math.floor((Math.random() * 1500) + 1000);
+    }
+    if(fred >= 16 && fred <= 20 ){
+            fmovetime = Math.floor((Math.random() * 1000) + 500);
+    }
+}
+function fxcnm (){
+    if(foxd >= 1 && foxd <= 5 ){
+            fxmovetime = Math.floor((Math.random() * 1000) + 4000);
+    }
+    if(foxd >= 6 && foxd <= 10 ){
+            fxmovetime = Math.floor((Math.random() * 1000) + 3000);
+    }
+    if(foxd >= 11 && foxd <= 15 ){
+            fxmovetime = Math.floor((Math.random() * 1000) + 2000);
+    }
+    if(foxd >= 16 && foxd <= 20 ){
+            fxmovetime = Math.floor((Math.random() * 500) + 1500);
+    }
+}
 function movement(){
-        bmovetime = bmovetime - 1;
-        cmovetime = cmovetime - 1;
-        fxmovetime = fxmovetime - 1;
-        fmovetime = fmovetime - 1;
-        if(bonnie === 4){
-               bonnie = Math.floor((Math.random() * 3) + 2);
-           }    
+        if(bond > 0){
+            bmovetime = bmovetime - 1;
+        }
+        if(chid > 0){
+            cmovetime = cmovetime - 1;
+        }
+        if(fred > 0){
+            fmovetime = fmovetime - 1;
+        }
+        if(foxd > 0){
+            fxmovetime = fxmovetime - 1;
+        }   
         if(bmovetime <= 0){
            if(bonnie === 5){
-               bonnie = Math.floor((Math.random() * 3) + 2);
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bonnie = 3;
+               bcnm();
            }
            else if(bonnie === 3){
                bonnie = 2;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bcnm();
            }
            else if(bonnie === 2){
                bonnie = 1;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bcnm();
            }
            else if(bonnie === 1){
-               stomp.play();
                leftlight = 0;
                light.currentTime = 0;
                light.pause();
                bonnie = 0;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bmovetime = Math.floor((Math.random() * 1000) + 750);
            }
            else if (bonnie === 0 && leftdoor === 0){
                death();
@@ -257,29 +320,28 @@ function movement(){
                leftlight = 0;
                stomp2.play();
                bonnie = 5;
-               bmovetime = Math.floor((Math.random() * 1000) + 300);
+               bcnm();
            }
         }
         if(cmovetime <= 0){
            if(chica === 5){
-               chica = Math.floor((Math.random() * 2) + 5);
-               cmovetime = Math.floor((Math.random() * 500) + 800);
+               chica = 6
+               ccnm();
            }
            else if(chica === 6){
                chica = 7;
-               cmovetime = Math.floor((Math.random() * 500) + 800);
+               ccnm();
            }
            else if(chica === 7 && freddy !== 8){
                chica = 8;
-               cmovetime = Math.floor((Math.random() * 500) + 800);
+               ccnm();
            }
            else if(chica === 8){
                light.currentTime = 0;
                light.pause();
-               stomp.play();
                rightlight = 0;
                chica = 0;
-               cmovetime = Math.floor((Math.random() * 800) + 300);
+               cmovetime = Math.floor((Math.random() * 750) + 750);
            }
            else if (chica === 0 && rightdoor === 0){
                death();
@@ -288,47 +350,46 @@ function movement(){
                stomp2.play();
                rightlight = 0;
                chica = 5;
-               cmovetime = Math.floor((Math.random() * 1000) + 300);
+               ccnm();
            }
         }
         if(fmovetime <= 0 ){
            if(freddy === 5){
                freddy = 6;
                flaugh.play();
-               fmovetime = Math.floor((Math.random() * 500) + 2000);
+               fcnm();
            }
            else if(freddy === 6){
                freddy = 7;
                flaugh.play();
-               fmovetime = Math.floor((Math.random() * 500) + 2000);
+               fcnm();
            }
            else if(freddy === 7 && chica !== 8){
                freddy = 8;
                flaugh.play();
-               fmovetime = Math.floor((Math.random() * 500) + 2000);
+               fmovetime = Math.floor((Math.random() * 1000) + 1000);
            }
            else if (freddy === 8 && rightdoor === 0){
                death();
            }
            else if(freddy === 8){
-               rightlight = 0;
                flaugh.play();
                freddy = 5;
-               fmovetime = Math.floor((Math.random() * 100) + 2500);
+               fcnm();
            }
         }
         if(fxmovetime <= 0){
            if(foxy === 5 ){
                foxy = 4;
-               fxmovetime = Math.floor((Math.random() * 1000) + 1000);
+               fxcnm();
            }
-           else if(foxy=== 4 && cameraframe !== 4){
+           else if(foxy=== 4){
                foxy = 3;
-               fxmovetime = Math.floor((Math.random() * 1000) + 1000);
+               fxcnm();
            }
            else if(foxy === 3 && bonnie !== 2) {
                foxy = 2;
-               fxmovetime = 600;
+               fxmovetime = 500;
            }
            else if(foxy === 2){
                foxy = 1;
@@ -341,8 +402,8 @@ function movement(){
            }
            else if(foxy === 1){
                banging.play();
-               foxy = 4;
-               fxmovetime = Math.floor((Math.random() * 500) + 2000);
+               foxy = 5;
+               fxcnm();
             }
         }
     }
@@ -372,7 +433,7 @@ function timecheck(){
         if(time === 36000){
             hour = 6;
             document.getElementById("timei").innerHTML = hour+"AM";
-            localstorage.night6 = 1;
+            localStorage.cnight = 1;
             window.location.href="win.html";
         }
     }
@@ -397,7 +458,6 @@ function powercheck(){
         powertick = 10000;
     }
     if(power <= 0){
-        phone3.pause();
         ambiance.pause();
         power = 0;
         leftdoor = 0;
@@ -409,7 +469,6 @@ function powercheck(){
 
 $(document).ready(function(){ 
     ambiance.play();
-    phone3.play();
     document.getElementById("timei").innerHTML = hour+"AM";
     document.getElementById("poweri").innerHTML = "POWER : "+ power +'%';
     setInterval(timecheck,10);

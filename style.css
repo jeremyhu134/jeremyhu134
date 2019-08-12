@@ -1,3 +1,43 @@
+.title {
+    position: relative;
+    color:white;
+    align-self: center;
+}
+.avatar{
+    position: relative;
+    width:50%;
+    left:25%;
+}
+.arrow{
+    position: relative;
+    left:25%;
+    width: 50px;
+    height: 60px;
+    background-color: grey;
+    color:white;
+    font-size : 200%;
+}
+.arrow:active{
+    background-color:white;
+}
+.goo{
+    left:80%;
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background-color: grey;
+    color:white;
+    font-size : 200%;
+    
+}
+.dif{
+    position: relative;
+    left:35%;
+    width: 50px;
+    height: 60px;
+    color:white;
+    font-size : 200%;
+}
 .bttn {
     position: relative;
     background-color:forestgreen;
